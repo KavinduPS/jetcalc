@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "air-cal",
-    "slug": "air-cal",
+    "name": "JetCalc",
+    "slug": "JetCalc",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,14 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.jetcalc"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.aircal"
+      "package": "com.anonymous.jetcalc"
     },
     "web": {
       "bundler": "metro",

@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.aircal'
+    namespace 'com.anonymous.jetcalc'
     defaultConfig {
-        applicationId 'com.anonymous.aircal'
+        applicationId 'com.anonymous.jetcalc'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
