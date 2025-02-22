@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
   },
   label: {
     width: "60%",
-    fontSize: 20,
+    fontSize: 14,
   },
   inputAndUnit: {
     display: "flex",
