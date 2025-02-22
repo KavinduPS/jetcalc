@@ -28,7 +28,7 @@ export default function HomeScreen() {
         </Link>
         <Link href="/qatar" asChild>
           <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>Qatar</Text>
+            <Text style={styles.buttonText}>Qatar Airways</Text>
           </Pressable>
         </Link>
         <Link href="/omanair" asChild>
