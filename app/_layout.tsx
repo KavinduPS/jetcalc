@@ -43,10 +43,34 @@ export default function RootLayout() {
           name="srilankan"
           options={{
             title: "SriLankan Airlines",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
           }}
         />
-        <Stack.Screen name="gulfair" options={{ title: "Gulf Air" }} />
-        <Stack.Screen name="qatar" options={{ title: "Qatar" }} />
+        <Stack.Screen
+          name="gulfair"
+          options={{
+            title: "Gulf Air",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
+          }}
+        />
+        <Stack.Screen
+          name="qatar"
+          options={{
+            title: "Qatar Airways",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
+          }}
+        />
+        <Stack.Screen
+          name="omanair"
+          options={{
+            title: "Oman Air",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
+          }}
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

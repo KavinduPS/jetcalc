@@ -10,6 +10,7 @@ import { Formik } from "formik";
 import { SafeAreaView } from "react-native";
 import { useEffect } from "react";
 import { ScrollView } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 interface SrilankanProps {
   plannedUplift: string;
@@ -33,183 +34,190 @@ export default function SriLankanScreen() {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS == "ios" ? "padding" : undefined}
-      >
-        <ScrollView>
-          <Formik
-            initialValues={initialFormValues}
-            onSubmit={(values) => console.log(values)}
-          >
-            {({ values, setFieldValue }) => {
-              const {
-                plannedUplift,
-                fob,
-                actualUplift,
-                calculatedUplift,
-                discrepancy,
-                bowserUplift,
-                sg,
-              } = values;
-              useEffect(() => {
-                if (sg && bowserUplift) {
-                  const newActualUplift =
-                    parseFloat(bowserUplift) * parseFloat(sg);
-                  setFieldValue(
-                    "actualUplift",
-                    parseFloat(newActualUplift.toFixed(10))
-                  );
-                } else {
-                  setFieldValue("actualUplift", "");
-                }
+    <LinearGradient
+      colors={["rgb(28,28,28)", "rgb(10, 10, 10)"]}
+      style={styles.container}
+    >
+      <SafeAreaView style={{ flex: 1, backgroundColor: "transparent" }}>
+        <KeyboardAvoidingView
+          style={{ flex: 1 }}
+          behavior={Platform.OS == "ios" ? "padding" : undefined}
+        >
+          <ScrollView>
+            <Formik
+              initialValues={initialFormValues}
+              onSubmit={(values) => console.log(values)}
+            >
+              {({ values, setFieldValue }) => {
+                const {
+                  plannedUplift,
+                  fob,
+                  actualUplift,
+                  calculatedUplift,
+                  discrepancy,
+                  bowserUplift,
+                  sg,
+                } = values;
+                useEffect(() => {
+                  if (sg && bowserUplift) {
+                    const newActualUplift =
+                      parseFloat(bowserUplift) * parseFloat(sg);
+                    setFieldValue(
+                      "actualUplift",
+                      parseFloat(newActualUplift.toFixed(10))
+                    );
+                  } else {
+                    setFieldValue("actualUplift", "");
+                  }
 
-                if (plannedUplift && fob) {
-                  const newCalculatedUplift =
-                    parseFloat(plannedUplift) - parseFloat(fob);
-                  setFieldValue(
-                    "calculatedUplift",
-                    parseFloat(newCalculatedUplift.toFixed(10))
-                  );
-                } else {
-                  setFieldValue("calculatedUplift", "");
-                }
+                  if (plannedUplift && fob) {
+                    const newCalculatedUplift =
+                      parseFloat(plannedUplift) - parseFloat(fob);
+                    setFieldValue(
+                      "calculatedUplift",
+                      parseFloat(newCalculatedUplift.toFixed(10))
+                    );
+                  } else {
+                    setFieldValue("calculatedUplift", "");
+                  }
 
-                if (actualUplift && calculatedUplift) {
-                  const newDiscrepancy =
-                    parseFloat(actualUplift) - parseFloat(calculatedUplift);
-                  setFieldValue(
-                    "discrepancy",
-                    parseFloat(newDiscrepancy.toFixed(10))
-                  );
-                } else {
-                  setFieldValue("discrepancy", "");
-                }
-              }, [
-                bowserUplift,
-                sg,
-                plannedUplift,
-                fob,
-                actualUplift,
-                calculatedUplift,
-              ]);
-              return (
-                <View style={styles.container}>
-                  <View style={styles.inputs}>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>PLANNED UPLIFT</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) =>
-                            setFieldValue("plannedUplift", value)
-                          }
-                          value={plannedUplift}
-                          keyboardType="numeric"
-                        />
-                        <Text style={styles.unit}>kg</Text>
+                  if (actualUplift && calculatedUplift) {
+                    const newDiscrepancy =
+                      parseFloat(actualUplift) - parseFloat(calculatedUplift);
+                    setFieldValue(
+                      "discrepancy",
+                      parseFloat(newDiscrepancy.toFixed(10))
+                    );
+                  } else {
+                    setFieldValue("discrepancy", "");
+                  }
+                }, [
+                  bowserUplift,
+                  sg,
+                  plannedUplift,
+                  fob,
+                  actualUplift,
+                  calculatedUplift,
+                ]);
+                return (
+                  <View style={styles.container}>
+                    <View style={styles.inputs}>
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>PLANNED UPLIFT</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) =>
+                              setFieldValue("plannedUplift", value)
+                            }
+                            value={plannedUplift}
+                            keyboardType="numeric"
+                          />
+                          <Text style={styles.unit}>kg</Text>
+                        </View>
                       </View>
-                    </View>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>FOB</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) => setFieldValue("fob", value)}
-                          value={fob}
-                          keyboardType="numeric"
-                        />
-                        <Text style={styles.unit}>kg</Text>
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>FOB</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) =>
+                              setFieldValue("fob", value)
+                            }
+                            value={fob}
+                            keyboardType="numeric"
+                          />
+                          <Text style={styles.unit}>kg</Text>
+                        </View>
                       </View>
-                    </View>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>ACTUAL UPLIFT</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) =>
-                            setFieldValue("actualUplift", value)
-                          }
-                          value={actualUplift.toString()}
-                          keyboardType="numeric"
-                          editable={false}
-                        />
-                        <Text style={styles.unit}>kg</Text>
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>ACTUAL UPLIFT</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) =>
+                              setFieldValue("actualUplift", value)
+                            }
+                            value={actualUplift.toString()}
+                            keyboardType="numeric"
+                            editable={false}
+                          />
+                          <Text style={styles.unit}>kg</Text>
+                        </View>
                       </View>
-                    </View>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>CALCULATED UPLIFT</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) =>
-                            setFieldValue("calculatedUplift", value)
-                          }
-                          value={calculatedUplift.toString()}
-                          keyboardType="numeric"
-                          editable={false}
-                        />
-                        <Text style={styles.unit}>kg</Text>
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>CALCULATED UPLIFT</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) =>
+                              setFieldValue("calculatedUplift", value)
+                            }
+                            value={calculatedUplift.toString()}
+                            keyboardType="numeric"
+                            editable={false}
+                          />
+                          <Text style={styles.unit}>kg</Text>
+                        </View>
                       </View>
-                    </View>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>DISCREPANCY</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) =>
-                            setFieldValue("discrepancy", value)
-                          }
-                          value={discrepancy.toString()}
-                          keyboardType="numeric"
-                          editable={false}
-                        />
-                        <Text style={styles.unit}>kg</Text>
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>DISCREPANCY</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) =>
+                              setFieldValue("discrepancy", value)
+                            }
+                            value={discrepancy.toString()}
+                            keyboardType="numeric"
+                            editable={false}
+                          />
+                          <Text style={styles.unit}>kg</Text>
+                        </View>
                       </View>
-                    </View>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>BOWSER UPLIFT</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) =>
-                            setFieldValue("bowserUplift", value)
-                          }
-                          value={bowserUplift}
-                          keyboardType="numeric"
-                        />
-                        <Text style={styles.unit}>l</Text>
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>BOWSER UPLIFT</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) =>
+                              setFieldValue("bowserUplift", value)
+                            }
+                            value={bowserUplift}
+                            keyboardType="numeric"
+                          />
+                          <Text style={styles.unit}>l</Text>
+                        </View>
                       </View>
-                    </View>
-                    <View style={styles.inputContainer}>
-                      <Text style={styles.label}>S.G</Text>
-                      <View style={styles.inputAndUnit}>
-                        <TextInput
-                          style={styles.textInput}
-                          onChangeText={(value) => setFieldValue("sg", value)}
-                          value={sg}
-                          keyboardType="numeric"
-                        />
+                      <View style={styles.inputContainer}>
+                        <Text style={styles.label}>S.G</Text>
+                        <View style={styles.inputAndUnit}>
+                          <TextInput
+                            style={styles.textInput}
+                            onChangeText={(value) => setFieldValue("sg", value)}
+                            value={sg}
+                            keyboardType="numeric"
+                          />
+                        </View>
                       </View>
                     </View>
                   </View>
-                </View>
-              );
-            }}
-          </Formik>
-        </ScrollView>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+                );
+              }}
+            </Formik>
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "transparent",
   },
   text: {
     color: "#000",
@@ -218,10 +226,11 @@ const styles = StyleSheet.create({
     padding: 10,
     width: "90%",
     marginTop: 20,
+    backgroundColor: "transparent",
   },
   inputContainer: {
     width: "100%",
-    height: 80,
+    height: 45,
     flexDirection: "row",
     marginBottom: 10,
     display: "flex",
@@ -230,7 +239,8 @@ const styles = StyleSheet.create({
   },
   label: {
     width: "60%",
-    fontSize: 20,
+    fontSize: 16,
+    color: "white",
   },
   inputAndUnit: {
     display: "flex",
@@ -240,16 +250,17 @@ const styles = StyleSheet.create({
     width: "40%",
   },
   textInput: {
-    height: 40,
+    height: 30,
     width: "75%",
-    backgroundColor: "#EEE",
-    fontSize: 20,
+    backgroundColor: "rgba(255,255,255,0.60)",
+    fontSize: 16,
     textAlign: "center",
     borderRadius: 10,
   },
   unit: {
-    fontSize: 20,
+    fontSize: 16,
     width: "20%",
     textAlign: "left",
+    color: "white",
   },
 });
