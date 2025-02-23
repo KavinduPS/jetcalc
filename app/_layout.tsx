@@ -71,6 +71,14 @@ export default function RootLayout() {
             headerTintColor: "white",
           }}
         />
+        <Stack.Screen
+          name="airindia"
+          options={{
+            title: "Air India",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
+          }}
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

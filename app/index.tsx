@@ -48,6 +48,11 @@ export default function HomeScreen() {
             <Text style={styles.buttonText}>Oman Air</Text>
           </TouchableOpacity>
         </Link>
+        <Link href="/airindia" asChild>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Air India</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </LinearGradient>
   );
