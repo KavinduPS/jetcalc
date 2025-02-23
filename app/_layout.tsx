@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { Image, View } from "react-native";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -45,6 +46,18 @@ export default function RootLayout() {
             title: "SriLankan Airlines",
             headerStyle: { backgroundColor: "rgb(28,28,28)" },
             headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 35,
+                  height: 35,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/srilankanairlines.png")}
+              />
+            ),
           }}
         />
         <Stack.Screen
@@ -53,6 +66,18 @@ export default function RootLayout() {
             title: "Gulf Air",
             headerStyle: { backgroundColor: "rgb(28,28,28)" },
             headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 35,
+                  height: 35,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/gulfair.png")}
+              />
+            ),
           }}
         />
         <Stack.Screen
@@ -61,6 +86,18 @@ export default function RootLayout() {
             title: "Qatar Airways",
             headerStyle: { backgroundColor: "rgb(28,28,28)" },
             headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 35,
+                  height: 35,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/qatarairways.png")}
+              />
+            ),
           }}
         />
         <Stack.Screen
@@ -69,6 +106,18 @@ export default function RootLayout() {
             title: "Oman Air",
             headerStyle: { backgroundColor: "rgb(28,28,28)" },
             headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 35,
+                  height: 35,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/omanair.png")}
+              />
+            ),
           }}
         />
         <Stack.Screen
@@ -77,6 +126,18 @@ export default function RootLayout() {
             title: "Air India",
             headerStyle: { backgroundColor: "rgb(28,28,28)" },
             headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 50,
+                  height: 50,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/airindia.png")}
+              />
+            ),
           }}
         />
         <Stack.Screen name="+not-found" />

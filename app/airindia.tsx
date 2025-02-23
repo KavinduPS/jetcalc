@@ -195,6 +195,7 @@ export default function AirIndiaScreen() {
                             value={meteredUplift}
                             keyboardType="numeric"
                           />
+                          <Text style={styles.unit}>l</Text>
                         </View>
                       </View>
                       <View style={styles.inputContainer}>
@@ -206,7 +207,6 @@ export default function AirIndiaScreen() {
                             value={sg}
                             keyboardType="numeric"
                           />
-                          <Text style={styles.unit}>kg</Text>
                         </View>
                       </View>
                       <View style={styles.inputContainer}>
@@ -251,7 +251,7 @@ export default function AirIndiaScreen() {
                             keyboardType="numeric"
                             editable={false}
                           />
-                          <Text style={styles.unit}>kg</Text>
+                          <Text style={styles.unit}>%</Text>
                         </View>
                       </View>
                       <View style={styles.inputContainer}>
