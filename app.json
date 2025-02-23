@@ -10,7 +10,12 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.jetcalc"
+      "bundleIdentifier": "com.anonymous.jetcalc",
+      "icon": {
+        "light": "./assets/icon/180x180-1.png",
+        "dark": "./assets/icon/180x180-1.png",
+        "tinted": "./assets/icon/180x180-1.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -29,10 +34,10 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/icon/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#222222"
         }
       ]
     ],

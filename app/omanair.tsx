@@ -172,7 +172,7 @@ export default function OmanAirScreen() {
                         <Text style={styles.label}>FUEL USED ON GROUND</Text>
                         <View style={styles.inputAndUnit}>
                           <TextInput
-                            style={styles.textInput}
+                            style={styles.textInputNonEditable}
                             onChangeText={(value) =>
                               setFieldValue("fog", value)
                             }
@@ -226,7 +226,7 @@ export default function OmanAirScreen() {
                         <Text style={styles.label}>CONVERSION FACTOR</Text>
                         <View style={styles.inputAndUnit}>
                           <TextInput
-                            style={styles.textInput}
+                            style={styles.textInputNonEditable}
                             onChangeText={(value) =>
                               setFieldValue("conversionFactor", value)
                             }
@@ -241,7 +241,7 @@ export default function OmanAirScreen() {
                         <Text style={styles.label}>METERED UPLIFT</Text>
                         <View style={styles.inputAndUnit}>
                           <TextInput
-                            style={styles.textInput}
+                            style={styles.textInputNonEditable}
                             onChangeText={(value) =>
                               setFieldValue("meteredUplift", value)
                             }
@@ -272,7 +272,7 @@ export default function OmanAirScreen() {
                         <Text style={styles.label}>ACTUAL UPLIFT</Text>
                         <View style={styles.inputAndUnit}>
                           <TextInput
-                            style={styles.textInput}
+                            style={styles.textInputNonEditable}
                             onChangeText={(value) =>
                               setFieldValue("actualUplift", value)
                             }
@@ -287,7 +287,7 @@ export default function OmanAirScreen() {
                         <Text style={styles.label}>DISCREPANCY</Text>
                         <View style={styles.inputAndUnit}>
                           <TextInput
-                            style={styles.textInput}
+                            style={styles.textInputNonEditable}
                             onChangeText={(value) =>
                               setFieldValue("discrepancy", value)
                             }
@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "40%",
+    width: "45%",
   },
   textInput: {
     height: 30,
@@ -355,6 +355,19 @@ const styles = StyleSheet.create({
     fontWeight: 500,
     textAlign: "center",
     borderRadius: 10,
+    borderColor: "rgb(182,0,0)",
+    borderWidth: 2,
+  },
+  textInputNonEditable: {
+    height: 32,
+    width: "75%",
+    backgroundColor: "rgba(255,255,255,0.60)",
+    fontSize: 18,
+    fontWeight: 500,
+    textAlign: "center",
+    borderRadius: 10,
+    borderColor: "green",
+    borderWidth: 2,
   },
   unit: {
     fontSize: 16,

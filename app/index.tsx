@@ -1,4 +1,12 @@
-import { StyleSheet, Text, View, Pressable, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
@@ -14,27 +22,31 @@ export default function HomeScreen() {
       style={styles.container}
     >
       <StatusBar barStyle={"light-content"} />
+      <Image
+        source={require("../assets/icon/index-page-image.png")}
+        style={styles.image}
+      />
       <Text style={styles.titleText}>Select Airline</Text>
       <View style={styles.buttonContainer}>
         <Link href="/srilankan" asChild>
-          <Pressable style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>SriLankan Airlines</Text>
-          </Pressable>
+          </TouchableOpacity>
         </Link>
         <Link href="/gulfair" asChild>
-          <Pressable style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Gulf Air</Text>
-          </Pressable>
+          </TouchableOpacity>
         </Link>
         <Link href="/qatar" asChild>
-          <Pressable style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Qatar Airways</Text>
-          </Pressable>
+          </TouchableOpacity>
         </Link>
         <Link href="/omanair" asChild>
-          <Pressable style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Oman Air</Text>
-          </Pressable>
+          </TouchableOpacity>
         </Link>
       </View>
     </LinearGradient>
@@ -46,6 +58,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  image: {
+    width: 150,
+    height: 150,
+    marginBottom: 10,
   },
   titleText: {
     color: "rgba(225,225,225,0.75)",
