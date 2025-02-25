@@ -53,6 +53,11 @@ export default function HomeScreen() {
             <Text style={styles.buttonText}>Air India</Text>
           </TouchableOpacity>
         </Link>
+        <Link href="/malaysia" asChild>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Malaysia Airlines</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </LinearGradient>
   );
