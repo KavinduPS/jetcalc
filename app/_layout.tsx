@@ -155,7 +155,7 @@ export default function RootLayout() {
                   marginRight: 10,
                   marginBottom: 5,
                 }}
-                source={require("../assets/icon/airline-icons/malaysia.png")}
+                source={require("../assets/icon/airline-icons/malaysiaairlines.png")}
               />
             ),
           }}
