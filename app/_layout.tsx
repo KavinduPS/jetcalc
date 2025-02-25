@@ -140,6 +140,26 @@ export default function RootLayout() {
             ),
           }}
         />
+        <Stack.Screen
+          name="malaysia"
+          options={{
+            title: "Malaysia Airlines",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 50,
+                  height: 50,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/malaysia.png")}
+              />
+            ),
+          }}
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
