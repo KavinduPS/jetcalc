@@ -4,7 +4,7 @@
     "slug": "JetCalc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icon/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -12,14 +12,14 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.jetcalc",
       "icon": {
-        "light": "./assets/icon/180x180-1.png",
-        "dark": "./assets/icon/180x180-1.png",
-        "tinted": "./assets/icon/180x180-1.png"
+        "light": "./assets/icon/icon.png",
+        "dark": "./assets/icon/icon.png",
+        "tinted": "./assets/icon/icon.png"
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/icon/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.jetcalc"
@@ -34,7 +34,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/icon.png",
+          "image": "./assets/icon/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#222222"

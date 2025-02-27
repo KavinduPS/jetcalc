@@ -189,9 +189,7 @@ export default function MalaysiaScreen() {
                           <Text style={styles.unit}>kg</Text>
                         </View>
                       </View>
-                      <Text style={styles.separatorText}>
-                        TO BE FILLED BY THE TECH CREW
-                      </Text>
+                      <Text style={styles.separatorText}></Text>
                       <View style={styles.inputContainer}>
                         <Text style={styles.label}>MIN SECTOR FUEL</Text>
                         <View style={styles.inputAndUnit}>

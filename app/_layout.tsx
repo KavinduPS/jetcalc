@@ -130,8 +130,8 @@ export default function RootLayout() {
             headerRight: () => (
               <Image
                 style={{
-                  width: 50,
-                  height: 50,
+                  width: 35,
+                  height: 35,
                   marginRight: 10,
                   marginBottom: 5,
                 }}
@@ -150,8 +150,8 @@ export default function RootLayout() {
             headerRight: () => (
               <Image
                 style={{
-                  width: 50,
-                  height: 50,
+                  width: 35,
+                  height: 35,
                   marginRight: 10,
                   marginBottom: 5,
                 }}
