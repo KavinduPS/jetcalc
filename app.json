@@ -4,7 +4,7 @@
     "slug": "JetCalc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon/icon.png",
+    "icon": "./assets/icon/180x180-1.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -19,8 +19,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon/icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ransparent"
       },
       "package": "com.anonymous.jetcalc"
     },
@@ -37,7 +37,7 @@
           "image": "./assets/icon/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#222222"
+          "backgroundColor": "#202020"
         }
       ]
     ],
