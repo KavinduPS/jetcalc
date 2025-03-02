@@ -160,6 +160,26 @@ export default function RootLayout() {
             ),
           }}
         />
+        <Stack.Screen
+          name="emirates"
+          options={{
+            title: "Emirates",
+            headerStyle: { backgroundColor: "rgb(28,28,28)" },
+            headerTintColor: "white",
+
+            headerRight: () => (
+              <Image
+                style={{
+                  width: 35,
+                  height: 35,
+                  marginRight: 10,
+                  marginBottom: 5,
+                }}
+                source={require("../assets/icon/airline-icons/emirates.png")}
+              />
+            ),
+          }}
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
