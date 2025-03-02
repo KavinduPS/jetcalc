@@ -22,6 +22,11 @@ export default function HomeScreen() {
       style={styles.container}
     >
       <StatusBar barStyle={"light-content"} />
+      <Link href={"/"} asChild>
+        <TouchableOpacity style={styles.helpContainer}>
+          <Text style={styles.help}>!</Text>
+        </TouchableOpacity>
+      </Link>
       <Image
         source={require("../assets/icon/index-page-image.png")}
         style={styles.image}
@@ -33,14 +38,19 @@ export default function HomeScreen() {
             <Text style={styles.buttonText}>SriLankan Airlines</Text>
           </TouchableOpacity>
         </Link>
-        <Link href="/gulfair" asChild>
+        <Link href="/emirates" asChild>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Gulf Air</Text>
+            <Text style={styles.buttonText}>Emirates</Text>
           </TouchableOpacity>
         </Link>
         <Link href="/qatar" asChild>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Qatar Airways</Text>
+          </TouchableOpacity>
+        </Link>
+        <Link href="/gulfair" asChild>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Gulf Air</Text>
           </TouchableOpacity>
         </Link>
         <Link href="/omanair" asChild>
@@ -68,6 +78,25 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  helpContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: 25,
+    borderWidth: 2,
+    borderColor: "#FFF",
+    width: 25,
+    height: 25,
+    borderRadius: 15,
+    position: "absolute",
+    top: 50,
+    right: 20,
+  },
+  help: {
+    color: "#FFF",
+    fontWeight: 500,
+    fontSize: 18,
   },
   image: {
     width: 150,
