@@ -14,8 +14,15 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Link } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
+import AppGuide from "@/components/AppGuide";
+import { useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
+  const [isHelpModalVisible, setIsHelpModalVisible] = useState<boolean>(false);
+  const handleClose = (): void => {
+    setIsHelpModalVisible(false);
+  };
   return (
     <LinearGradient
       colors={["rgb(28,28,28)", "rgb(10, 10, 10)"]}
@@ -23,8 +30,15 @@ export default function HomeScreen() {
     >
       <StatusBar barStyle={"light-content"} />
       <Link href={"/"} asChild>
-        <TouchableOpacity style={styles.helpContainer}>
-          <Text style={styles.help}>!</Text>
+        <TouchableOpacity
+          onPress={() => setIsHelpModalVisible(true)}
+          style={styles.helpContainer}
+        >
+          <Ionicons
+            name="information-circle-outline"
+            size={25}
+            color={"#FFF"}
+          />
         </TouchableOpacity>
       </Link>
       <Image
@@ -69,6 +83,7 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </Link>
       </View>
+      <AppGuide isVisible={isHelpModalVisible} onClose={handleClose} />
     </LinearGradient>
   );
 }
@@ -84,19 +99,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     fontSize: 25,
-    borderWidth: 2,
-    borderColor: "#FFF",
-    width: 25,
-    height: 25,
-    borderRadius: 15,
+    width: 22,
+    height: 22,
     position: "absolute",
-    top: 50,
-    right: 20,
+    top: 45,
+    right: 22,
   },
   help: {
     color: "#FFF",
     fontWeight: 500,
-    fontSize: 18,
+    fontSize: 15,
   },
   image: {
     width: 150,
