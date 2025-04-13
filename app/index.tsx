@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
     width: 22,
     height: 22,
     position: "absolute",
-    top: 45,
-    right: 22,
+    top: 53,
+    right: 25,
   },
   help: {
     color: "#FFF",
