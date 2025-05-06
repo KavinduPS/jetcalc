@@ -1,4 +1,4 @@
-package com.anonymous.jetcalc
+package com..jetcalc
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

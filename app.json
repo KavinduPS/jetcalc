@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.jetcalc",
+      "bundleIdentifier": "com.thrustlogic.jetcalc",
       "icon": {
         "light": "./assets/icon/icon.png",
         "dark": "./assets/icon/icon.png",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ransparent"
       },
-      "package": "com.anonymous.jetcalc"
+      "package": "com.thrustlogic.jetcalc"
     },
     "web": {
       "bundler": "metro",
@@ -43,6 +43,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "706f4e45-8228-43e0-9b1c-4253fa91dbb2"
+      }
     }
   }
 }
