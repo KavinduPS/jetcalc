@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ransparent"
+        "backgroundColor": "#FFFFFF"
       },
       "package": "com.thrustlogic.jetcalc"
     },
@@ -39,7 +39,9 @@
           "resizeMode": "contain",
           "backgroundColor": "#202020"
         }
-      ]
+      ],
+      "expo-font",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true
